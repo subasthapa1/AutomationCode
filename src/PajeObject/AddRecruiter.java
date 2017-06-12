@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 public class AddRecruiter {
 	public WebDriver driver;
@@ -40,6 +41,8 @@ public class AddRecruiter {
 	public WebElement cityField;
 	
 	//Add select dropdown locator in near future.
+	@FindBy(how=How.XPATH, using=".//*[@id='administrative_area_level_1']")
+	public WebElement stateDropdownField;
 	
 	@FindBy(how=How.ID, using="postal_code")
 	public WebElement zipCodeField;
@@ -138,6 +141,12 @@ public void setProfileImageField(String profileImage){
 	profilePicField.sendKeys(profileImage);
 }
 
+public void setStateField(int index){
+	Select drpdwn= new Select(stateDropdownField);
+	drpdwn.selectByIndex(index);
+	
+}
+
 //*********************Manupulation on form elements**********************************************************************************************
 
 //*********************************Functions to set all required fields***********************************************************************
@@ -150,5 +159,25 @@ public void setAllRequiredFields(String emailId, String firstName, String lastNa
 	this.setCityField(city);
 	this.setZipCodeField(zipCode);
 	saveButton.click();
+}
+public void setAllfields(String middleName, String address2,int index,String country,String taxId,String bankName,String routingNumber,String accountNumber, String profileImage, String status,String emailId, String firstName, String lastName, String phone, String address1, String city, String zipCode)
+{
+	this.setEmailField(emailId);
+	this.setFirstNameField(firstName);
+	this.setLastNameField(lastName);
+	this.setPhoneField(phone);
+	this.setAddress1Field(address1);
+	this.setCityField(city);
+	this.setZipCodeField(zipCode);
+	this.setMiddleNameField(middleName);
+	this.setAddress2Field(address2);
+	this.setStateField(index);
+	this.setTaxIdField(taxId);
+	this.setBankNameField(bankName);
+	this.setRoutingNumberField(routingNumber);
+	this.setAccountNumberField(accountNumber);
+	
+	saveButton.click();
+	
 }
 }

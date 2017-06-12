@@ -4,3 +4,9 @@
 [0608/141631.863:WARNING:process_snapshot_win.cc(71)] ReadMemory ExceptionInformation failed
 [0608/141631.864:WARNING:crash_report_exception_handler.cc(62)] ProcessSnapshotWin::Initialize failed
 [0608/141631.864:ERROR:scoped_process_suspend.cc(39)] NtResumeProcess: An attempt was made to access an exiting process.  (0xc000010a)
+[0612/175404.936:ERROR:process_info.cc(349)] VirtualQueryEx: Access is denied. (0x5)
+[0612/175404.938:ERROR:process_info.cc(570)] ReadMemoryInfo failed
+[0612/175404.942:ERROR:process_reader_win.cc(108)] process 5016 not found
+[0612/175404.942:ERROR:exception_snapshot_win.cc(87)] thread ID 0 not found in process
+[0612/175404.942:WARNING:crash_report_exception_handler.cc(62)] ProcessSnapshotWin::Initialize failed
+[0612/175404.943:ERROR:scoped_process_suspend.cc(39)] NtResumeProcess: An attempt was made to access an exiting process.  (0xc000010a)
