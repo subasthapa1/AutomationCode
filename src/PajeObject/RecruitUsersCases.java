@@ -29,15 +29,20 @@ public class RecruitUsersCases {
 		  
 		 WebDriverWait wait = new WebDriverWait(driver, 3);
 		 wait.until(ExpectedConditions.elementToBeClickable(By.xpath(".//*[@id='agent']/span")));
-		  
+		 
+		 //Click recruit user 
 		 dbPage= new DashboardPage(driver);
-		 dbPage.clickRecruitUsers();
+		 dbPage.clickRecruitUsersOption();
+		 
+		 //Click add user button
 		 RecruitUsersListpage rc=new RecruitUsersListpage(driver);
-		 rc.clickAddUser();		  
+		 rc.clickAddUser();	
+		 
+		 //Fill all the required fields 
 		 AddRecruiter rctr= new AddRecruiter(driver);
-		 rctr.setAllRequiredFields( "email@gmail.com", "firstName", "lastName", "phone","address1", "ktm city", "7777");
+		 rctr.setAllRequiredFields( "email@gmail.com", "firstName", "lastName", "9846474442","address1", "ktm city", "77777");
 
-		  
+		  //Filter user 
 		  RecruitUsersListpage ls=new RecruitUsersListpage(driver);
 		  ls.filterList(1, "Amish");
 		  

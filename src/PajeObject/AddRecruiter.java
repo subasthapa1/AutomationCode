@@ -4,58 +4,69 @@ package PajeObject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
 public class AddRecruiter {
 	public WebDriver driver;
 	public AddRecruiter(WebDriver driver){
-		driver=this.driver;
+		this.driver=driver;
 		PageFactory.initElements(driver,this);
 	}
-	@FindBy(id="enterEmail")
+
+//*********************form element declaration**********************************************************************
+	@FindBy(how=How.ID, using="enterEmail")
 	public WebElement emailField;
 	
-	@FindBy(id="first_name")
+	@FindBy(how=How.ID, using="first_name")
 	public WebElement firstNameField;
 	
-	@FindBy(id="middle_name")
+	@FindBy(how=How.ID, using="middle_name")
 	public WebElement middleNameField;
 	
-	@FindBy(id="last_name")
+	@FindBy(how=How.ID, using="last_name")
 	public WebElement lastNameField;
 	
-	@FindBy(id="phone")
+	@FindBy(how=How.ID, using="phone")
 	public WebElement phoneField;
 	
-	@FindBy(name="addr_line1")
+	@FindBy(how=How.XPATH, using="//input[@name='addr_line1']")
 	public WebElement addressLineField1;
 	
-	@FindBy(name="addr_line2")
+	@FindBy(how=How.XPATH, using="//input[@name='addr_line2']")
 	public WebElement addressLineField2;
 	
-	@FindBy(name="city")
+	@FindBy(how=How.XPATH, using=".//*[@id='locality']")
 	public WebElement cityField;
 	
-	@FindBy(id="zip_code")
+	//Add select dropdown locator in near future.
+	
+	@FindBy(how=How.ID, using="postal_code")
 	public WebElement zipCodeField;
 	
-	@FindBy(id="tax_id")
+	@FindBy(how=How.ID, using="tax_id")
 	public WebElement taxIdField;
 	
-	@FindBy(id="bank_name")
+	@FindBy(how=How.ID, using="bank_name")
 	public WebElement bankNameField;
 	
-	@FindBy(id="routing_number")
+	@FindBy(how=How.ID, using="routing_number")
 	public WebElement routingNumberField;
 	
-	@FindBy(id="account_number")
+	@FindBy(how=How.ID, using="account_number")
 	public WebElement accountNumberField;
 	
 	
-	@FindBy(id="profile_pic")
+	@FindBy(how=How.ID, using="profile_pic")
 	public WebElement profilePicField;
 	
+	@FindBy(how=How.XPATH, using=".//*[@id='page-content']/div[3]/div/form/div[18]/div/div/button")
+	public WebElement saveButton;
 	
+	
+//*********************form element declaration**********************************************************************
+	
+//*********************Manupulation on form elements**********************************************************************
 	
    public void setEmailField(String email ){
 	   emailField.clear();
@@ -126,6 +137,10 @@ public void setProfileImageField(String profileImage){
 	profilePicField.clear();
 	profilePicField.sendKeys(profileImage);
 }
+
+//*********************Manupulation on form elements**********************************************************************************************
+
+//*********************************Functions to set all required fields***********************************************************************
 public void setAllRequiredFields(String emailId, String firstName, String lastName, String phone, String address1, String city, String zipCode){
 	this.setEmailField(emailId);
 	this.setFirstNameField(firstName);
@@ -134,7 +149,6 @@ public void setAllRequiredFields(String emailId, String firstName, String lastNa
 	this.setAddress1Field(address1);
 	this.setCityField(city);
 	this.setZipCodeField(zipCode);
-	//WebElement el1=driver.findElement(By.cssSelector("#page-content > div.panel > div > form > div:nth-child(22) > div > div > button"));
-	//el1.click();
+	saveButton.click();
 }
 }
