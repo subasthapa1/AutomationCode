@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeMethod;
-
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class LoginCases {
@@ -82,5 +82,23 @@ public class LoginCases {
 	  objLogin.doLogout();
 	  driver.quit();
   }
+  
+  @Test(dataProvider = "Authentication")
+  public void validUsernameAndPasswordUsingDataProvider(String username, String password){
+	  LoginPage objLogin;
+	  driver.get("http://qa.codefirm.net/system/login");
+	  WebDriverWait wait = new WebDriverWait(driver, 10);
+	  wait.until(ExpectedConditions.elementToBeClickable(By.xpath("html/body/div/div/div/form/div/div/button")));
+	  objLogin = new LoginPage(driver);
+	  objLogin.loginToComlink(username,password);
+	  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	  objLogin.doLogout();
+	  driver.quit();
+  }
+  
+  @DataProvider(name="Authentication")
+	public static Object[][] credentials(){
+		return new Object[][]{{"admin","123admin@"}};
+	}
 
 }

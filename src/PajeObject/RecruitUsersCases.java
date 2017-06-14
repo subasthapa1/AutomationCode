@@ -75,4 +75,8 @@ public void addUserUsingFullData()
 		rctr.setAllfields( "middleName", "address2", 2, "country", "taxId123", "SBI bank", "123442", "12331212121212",  "profileImage",  "status", "emailId@gmail.com",  "firstName",  "lastName",  "123121212122",  "address1", "city","23332");
 		driver.quit();
 }
+	
+	
+	
+	
 }

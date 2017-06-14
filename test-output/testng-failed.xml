@@ -3,12 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="PajeObject.RecruitUsersCases">
+      <class name="PajeObject.LoginCases">
         <methods>
-          <include name="addUser"/>
+          <include name="validUsernameAndPasswordUsingDataProvider" invocation-numbers="0"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- PajeObject.RecruitUsersCases -->
+      </class> <!-- PajeObject.LoginCases -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -10,3 +10,15 @@
 [0612/175404.942:ERROR:exception_snapshot_win.cc(87)] thread ID 0 not found in process
 [0612/175404.942:WARNING:crash_report_exception_handler.cc(62)] ProcessSnapshotWin::Initialize failed
 [0612/175404.943:ERROR:scoped_process_suspend.cc(39)] NtResumeProcess: An attempt was made to access an exiting process.  (0xc000010a)
+[0614/125734.811:ERROR:process_reader_win.cc(151)] SuspendThread: Access is denied. (0x5)
+[0614/125734.812:ERROR:exception_snapshot_win.cc(87)] thread ID 9056 not found in process
+[0614/125734.812:WARNING:crash_report_exception_handler.cc(62)] ProcessSnapshotWin::Initialize failed
+[0614/131948.152:ERROR:process_info.cc(631)] range at 0x79e42c9200000000, size 0x3a fully unreadable
+[0614/131948.153:ERROR:process_info.cc(631)] range at 0x79e42cf800000000, size 0x3a fully unreadable
+[0614/131948.153:ERROR:process_info.cc(631)] range at 0x0, size 0x3a fully unreadable
+[0614/131948.359:ERROR:process_reader_win.cc(242)] ReadMemory at 0x3a7defd000 of 12288 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0614/131948.361:ERROR:crash_report_exception_handler.cc(116)] WriteEverything failed
+[0614/131948.411:ERROR:scoped_process_suspend.cc(39)] NtResumeProcess: An attempt was made to access an exiting process.  (0xc000010a)
+[0614/132056.910:ERROR:process_reader_win.cc(151)] SuspendThread: Access is denied. (0x5)
+[0614/132056.913:ERROR:exception_snapshot_win.cc(87)] thread ID 6800 not found in process
+[0614/132056.913:WARNING:crash_report_exception_handler.cc(62)] ProcessSnapshotWin::Initialize failed
