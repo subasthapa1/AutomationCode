@@ -26,8 +26,23 @@ WebDriver driver;
 		@FindBy(how=How.XPATH, using=".//*[@id='page-content']/div[3]/div/form/div/div[3]/div/span/button")
 		WebElement searchButton;
 
+		@FindBy(how=How.LINK_TEXT, using="Home")
+		WebElement homeLink;
+		
+		@FindBy(how=How.LINK_TEXT, using="Product Type List")
+		WebElement productTypeListLink;
+			
 //-----------------------------Declaration of elements----------------------------------------------------------
-	
+	   
+		public void clickHomeLink(){
+			   homeLink.click();
+		       }
+		    
+		    public void clickProductTypeListLink(){
+		    	productTypeListLink.click();
+		    }  
+		
+		
 		public void enterPackageType(String packageType){
 			packageTypeSearchBox.clear();
 			packageTypeSearchBox.sendKeys(packageType);

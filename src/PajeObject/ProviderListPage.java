@@ -7,7 +7,7 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
 public class ProviderListPage {
-WebDriver driver;
+    WebDriver driver;
 	
 	public ProviderListPage(WebDriver driver){
 		this.driver=driver;
@@ -26,8 +26,23 @@ WebDriver driver;
 		@FindBy(how=How.XPATH, using=".//*[@id='page-content']/div[4]/div/form/div/div[3]/div/span/button")
 		WebElement searchButton;
 		
+		@FindBy(how=How.LINK_TEXT, using="Home")
+		WebElement homeLink;
+		
+		@FindBy(how=How.LINK_TEXT, using="Providers List")
+		WebElement providerListLink;
+		
+		
+		
 //-----------------------------Declaration of elements----------------------------------------------------------
-	
+	    public void clickHomeLink(){
+	    	homeLink.click();
+	    }
+	    
+	    public void clickProviderListLink(){
+	    	providerListLink.click();
+	    }
+		
 		public void clickAddProviderButton()
 		{
 			addProviderButton.click();

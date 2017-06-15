@@ -15,7 +15,7 @@ public class PackagesListPage {
 	}
 	
 //-----------------------------Declaration of elements----------------------------------------------------------
-		@FindBy(how=How.XPATH, using="")
+		@FindBy(how=How.XPATH, using=".//*[@id='page-title']/div/a")
 		WebElement addPackageButton;
 
 		@FindBy(how=How.XPATH, using=".//*[@id='ss']")
@@ -27,14 +27,30 @@ public class PackagesListPage {
 
 		@FindBy(how=How.XPATH, using=".//*[@id='page-content']/div[3]/div/div[1]/div/form/div[2]/div/div/span/button")
 		WebElement searchButton;
+		
+		@FindBy(how=How.LINK_TEXT, using="Home")
+		WebElement homeLink;
+		
+		@FindBy(how=How.LINK_TEXT, using="Packages List")
+		WebElement packagesList;
+		
+		 
 //-----------------------------Declaration of elements----------------------------------------------------------		
 	
+		public void clickHomeLink(){
+			   homeLink.click();
+		       }
+		    
+		public void clickPackageListLink(){
+		    	packagesList.click();
+		    }
+		
 		public void clickAddPackageButton()
 		{
 			addPackageButton.click();
 		}
 		
-		public void enterProviderName(String packageName){
+		public void enterPackageName(String packageName){
 			packageSearchBox.clear();
 			packageSearchBox.sendKeys(packageName);
 		}
@@ -43,7 +59,7 @@ public class PackagesListPage {
 			Select statusdrp= new Select(statusDropdown);
 	        statusdrp.selectByVisibleText(status);
 	        
-	        enterProviderName(packageName);
+	        enterPackageName(packageName);
 	        searchButton.click();
 		}
 		

@@ -25,8 +25,24 @@ WebDriver driver;
 
 		@FindBy(how=How.XPATH, using=".//*[@id='page-content']/div[3]/div/form/div/div[3]/div/span/button")
 		WebElement searchButton;
+		
+		@FindBy(how=How.LINK_TEXT, using="Home")
+		WebElement homeLink;
+		
+		@FindBy(how=How.LINK_TEXT, using="Packages Bundle List")
+		WebElement packageBundleList;
+		
 //-----------------------------Declaration of elements----------------------------------------------------------
 
+		public void clickHomeLink(){
+			homeLink.click();
+		
+		}
+		
+		public void clickPackageBundleListLink(){
+			packageBundleList.click();
+		}
+		
 		public void clickAddPackageBundle(){
 			addPackagesBundleButton.click();
 		}
