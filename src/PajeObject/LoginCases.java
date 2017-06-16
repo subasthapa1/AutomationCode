@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -28,55 +29,59 @@ public class LoginCases {
   }
   @Test
   public void blankLogin(){
-	  LoginPage objLogin;
+	  LoginFormPage objLogin;
 	  driver.get("http://qa.codefirm.net/system/login");
 	  WebDriverWait wait = new WebDriverWait(driver, 10);
 	 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("html/body/div/div/div/form/div/div/button")));
-	  objLogin = new LoginPage(driver);
+	  objLogin = new LoginFormPage(driver);
 	  objLogin.loginToComlink(" "," ");
+	  Assert.assertEquals("Error! Username / Password Incorrect", objLogin.getErrorMessage());
 	  driver.quit();
 	  
   }
   @Test
   public void invalidUsername(){
-	  LoginPage objLogin;
+	  LoginFormPage objLogin;
 	  driver.get("http://qa.codefirm.net/system/login");
 	  WebDriverWait wait = new WebDriverWait(driver, 10);
 		 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("html/body/div/div/div/form/div/div/button")));
-	  objLogin = new LoginPage(driver);
+	  objLogin = new LoginFormPage(driver);
 	  objLogin.loginToComlink("admin1","123admin@");
+	  Assert.assertEquals("Error! Username / Password Incorrect", objLogin.getErrorMessage());
 	  driver.quit();
 	  
   }
   @Test
   public void invalidPassword(){
-	  LoginPage objLogin;
+	  LoginFormPage objLogin;
 	  driver.get("http://qa.codefirm.net/system/login");
 	  WebDriverWait wait = new WebDriverWait(driver, 10);
 		 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("html/body/div/div/div/form/div/div/button")));
-	  objLogin = new LoginPage(driver);
+	  objLogin = new LoginFormPage(driver);
 	  objLogin.loginToComlink("admin","123admin");
+	  Assert.assertEquals("Error! Username / Password Incorrect", objLogin.getErrorMessage());
 	  driver.quit();
 	  
   }
   @Test
   public void invalidUsernameAndPassword(){
-	  LoginPage objLogin;
+	  LoginFormPage objLogin;
 	  driver.get("http://qa.codefirm.net/system/login");
 	  WebDriverWait wait = new WebDriverWait(driver, 10);
 	  wait.until(ExpectedConditions.elementToBeClickable(By.xpath("html/body/div/div/div/form/div/div/button")));
-	  objLogin = new LoginPage(driver);
+	  objLogin = new LoginFormPage(driver);
 	  objLogin.loginToComlink("admin12","123admin@1");
+	  Assert.assertEquals("Error! Username / Password Incorrect", objLogin.getErrorMessage());
 	  driver.quit();
 	  
   }
   @Test
   public void validUsernameAndPassword(){
-	  LoginPage objLogin;
+	  LoginFormPage objLogin;
 	  driver.get("http://qa.codefirm.net/system/login");
 	  WebDriverWait wait = new WebDriverWait(driver, 10);
 	  wait.until(ExpectedConditions.elementToBeClickable(By.xpath("html/body/div/div/div/form/div/div/button")));
-	  objLogin = new LoginPage(driver);
+	  objLogin = new LoginFormPage(driver);
 	  objLogin.loginToComlink("admin","123admin@");
 	  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	  objLogin.doLogout();
@@ -85,11 +90,11 @@ public class LoginCases {
   
   @Test(dataProvider = "Authentication")
   public void validUsernameAndPasswordUsingDataProvider(String username, String password){
-	  LoginPage objLogin;
+	  LoginFormPage objLogin;
 	  driver.get("http://qa.codefirm.net/system/login");
 	  WebDriverWait wait = new WebDriverWait(driver, 10);
 	  wait.until(ExpectedConditions.elementToBeClickable(By.xpath("html/body/div/div/div/form/div/div/button")));
-	  objLogin = new LoginPage(driver);
+	  objLogin = new LoginFormPage(driver);
 	  objLogin.loginToComlink(username,password);
 	  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	  objLogin.doLogout();

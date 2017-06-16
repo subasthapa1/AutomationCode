@@ -8,14 +8,16 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class LoginPage {
+public class LoginFormPage {
 	
 	WebDriver driver;
-	public LoginPage(WebDriver driver){
+	public LoginFormPage(WebDriver driver){
 		this.driver=driver;
 		PageFactory.initElements(driver,this);
 		
 	}
+	
+//-------------------------------------------------------------------------------------------------	
 
 	@FindBy(name="username")
 	WebElement userNameComlink;
@@ -26,7 +28,10 @@ public class LoginPage {
 	@FindBy(xpath="/html/body/div/div/div/form/div/div/button")
 	WebElement loginBtnComlink;
 	
+	@FindBy(xpath="html/body/div/div/div[1]")
+	WebElement toastMessage;
 	
+//-------------------------------------------------------------------------------------------------	
 	public void setUsername(String user){
 		userNameComlink.clear();
 		userNameComlink.sendKeys(user);
@@ -44,7 +49,16 @@ public class LoginPage {
 	 this.setUsername(user);
 	 this.setPassword(passwd);
 	 this.clickLogin();
+	 WebDriverWait wait =new WebDriverWait(driver,2); 
+	 wait.until(ExpectedConditions.visibilityOf(toastMessage));
+	 getErrorMessage();
  }
+ 
+ public String getErrorMessage(){
+	 String errorMessage = toastMessage.getText();
+	 return errorMessage;
+ }
+
  public void doLogout(){
 	  WebElement logoutDropdownIcon = driver.findElement(By.xpath(".//*[@id='header-nav-left']/div/a/i"));
 	  WebDriverWait wait =new WebDriverWait(driver,2); 

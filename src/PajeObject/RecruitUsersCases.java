@@ -16,9 +16,9 @@ public class RecruitUsersCases {
 
 		  driver =new ChromeDriver();
 		  
-		     LoginPage objLogin;
+		     LoginFormPage objLogin;
 			 DashboardPage dbPage;
-			 objLogin = new LoginPage(driver);
+			 objLogin = new LoginFormPage(driver);
 			 driver.get("http://qa.codefirm.net/system/login");
 			 driver.manage().window().maximize(); 
 			 
@@ -43,7 +43,7 @@ public class RecruitUsersCases {
 		 
 		 
 		 //Fill all the required fields 
-		 AddRecruiter rctr= new AddRecruiter(driver);
+		 AddRecruiterFormPage rctr= new AddRecruiterFormPage(driver);
 		 rctr.setAllRequiredFields( "email1@gmail.com", "firstName", "lastName", "9846474442","address1", "ktm city", "77777");
          driver.quit();
 		 //Filter user 
@@ -54,7 +54,7 @@ public class RecruitUsersCases {
 	
 	@Test(priority=1)
 	public void addBlankRecruiterUser(){
-		AddRecruiter rctr= new AddRecruiter(driver);
+		AddRecruiterFormPage rctr= new AddRecruiterFormPage(driver);
 		 rctr.setAllRequiredFields( "", "", "", "","", "", "");	
 		 driver.quit();
 	}
@@ -64,14 +64,14 @@ public class RecruitUsersCases {
 		 
 		 
 		 //Fill all the required fields 
-		 AddRecruiter rctr= new AddRecruiter(driver);
+		 AddRecruiterFormPage rctr= new AddRecruiterFormPage(driver);
 		 rctr.setAllRequiredFields( "email1@gmail.com", "firstName", "lastName", "9846474442","address1", "ktm city", "77777");
 		 driver.quit();
 	}
 	@Test(priority=4)
 public void addUserUsingFullData()
 {
-		AddRecruiter rctr= new AddRecruiter(driver);
+		AddRecruiterFormPage rctr= new AddRecruiterFormPage(driver);
 		rctr.setAllfields( "middleName", "address2", 2, "country", "taxId123", "SBI bank", "123442", "12331212121212",  "profileImage",  "status", "emailId@gmail.com",  "firstName",  "lastName",  "123121212122",  "address1", "city","23332");
 		driver.quit();
 }

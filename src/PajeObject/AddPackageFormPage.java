@@ -1,5 +1,7 @@
 package PajeObject;
 
+
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -7,10 +9,10 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-public class AddPackagePage {
+public class AddPackageFormPage {
 WebDriver driver;
 	
-	public AddPackagePage(WebDriver driver){
+	public AddPackageFormPage(WebDriver driver){
 		this.driver=driver;
 		PageFactory.initElements(driver,this);
 	}
@@ -46,12 +48,18 @@ WebDriver driver;
 		WebElement packageLink;
 		
 		@FindBy(how=How.LINK_TEXT, using="Create Package")
+		
 		WebElement createPackageLink;
 		
 //-----------------------------Declaration of elements----------------------------------------------------------
 
 //-----------------------------Declaration of methods----------------------------------------------------------
-
+        public void clickBackButton(){
+        	backButton.click();
+        }
+        public void clickAddPackageButton(){
+        	addPackageButton.click();
+        }
 		public void enterPackageName(String packageName){
 			packageNameField.clear();
 			packageNameField.sendKeys(packageName);
@@ -83,7 +91,7 @@ WebDriver driver;
     		   selectInactiveStatus();
     	   }
     	   
-    	   addPackageButton.click();
+    	   clickAddPackageButton();
        }
 //-----------------------------Declaration of methods----------------------------------------------------------
 		

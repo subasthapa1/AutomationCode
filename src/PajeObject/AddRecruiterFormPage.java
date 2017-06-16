@@ -8,9 +8,9 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-public class AddRecruiter {
+public class AddRecruiterFormPage {
 	public WebDriver driver;
-	public AddRecruiter(WebDriver driver){
+	public AddRecruiterFormPage(WebDriver driver){
 		this.driver=driver;
 		PageFactory.initElements(driver,this);
 	}
