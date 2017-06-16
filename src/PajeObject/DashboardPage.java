@@ -21,7 +21,7 @@ public class DashboardPage {
 	WebElement userManagementDropdown;
 	
 	/*
-	 *Here we are writing custom xpath cause there are two elements with same ID 
+	 *Here we are writing custom xpath cause there are two elements with same ID and getting same xpath while inspecting 
 	 */
 	@FindBy(how=How.XPATH, using="//a[@title='Provider Management']")
 	WebElement providerManagementDropdown;
@@ -60,7 +60,7 @@ public class DashboardPage {
 //********************************Single Option declaration**********************************************************
 	
 	
-//*****************************Options of user management************************************************	
+//*****************************Options under user management dropdown************************************************	
 	@FindBy(how=How.XPATH, using=".//*[@id='recruiters']/span")
 	WebElement recruitUsersOption ;
 	
@@ -73,9 +73,23 @@ public class DashboardPage {
 	@FindBy(how=How.XPATH, using=".//*[@id='subuser']")
 	WebElement subOrganizationUsersOption;
 	
-//*****************************Options of user management*************************************************	
+//*****************************Options under user management dropdown*************************************************	
 	
-//*****************************Options of provider management************************************************	
+	
+//*******************************user account dropdown****************************************************************
+	@FindBy(how=How.XPATH, using=".//*[@id='header-nav-left']/div/a/i")
+	WebElement userAccountDropdown;
+	
+	@FindBy(how=How.XPATH, using=".//*[@id='header-nav-left']/div/div[2]/div/div[1]/div/a")
+	WebElement changePasswordLink;
+	
+	@FindBy(how=How.XPATH, using=".//*[@id='adminlogout']")
+	WebElement logoutButton;
+	
+//*******************************user account dropdown****************************************************************
+	
+	
+//*****************************Options under provider management dropdown************************************************	
 		@FindBy(how=How.XPATH, using="//a[@title='Provider & Packages']")
 		WebElement providerAndpackagesOption ;
 		
@@ -88,9 +102,9 @@ public class DashboardPage {
 		@FindBy(how=How.XPATH, using="//a[@title='Package Bundle']")
 		WebElement packageBundleOption;
 		
-//*****************************Options of provider management*************************************************	
+//*****************************Options under provider management dropdown*************************************************	
 	
-//*****************************Options of commission management************************************************	
+//*****************************Options under commission management dropdown************************************************	
 		@FindBy(how=How.XPATH, using="//a[@title='Upload Commission']")
 		WebElement uploadCommissionOption ;
 		
@@ -103,9 +117,9 @@ public class DashboardPage {
 		@FindBy(how=How.XPATH, using="//a[@title='PayOut Commission']")
 		WebElement PayoutCommission;
 		
-//*****************************Options of commission management*************************************************
+//*****************************Options under commission management dropdown*************************************************
 	
-//*****************************Options of admin config management************************************************	
+//*****************************Options under admin config management dropdown************************************************	
 		@FindBy(how=How.XPATH, using="//a[@title='Settings']")
 		WebElement settingsOption ;
 			
@@ -118,9 +132,9 @@ public class DashboardPage {
 		@FindBy(how=How.XPATH, using="//a[@title='Log Management']")
 		WebElement logManagementOption;	 
 				
-//*****************************Options of admin config management*************************************************
+//*****************************Options under admin config management dropdown*************************************************
 			
-//*****************************Options of admin user management************************************************	
+//*****************************Options under admin user management dropdown************************************************	
 		@FindBy(how=How.XPATH, using="//a[@title='Permissions']")
 		WebElement  permissionsOption;
 				
@@ -132,10 +146,10 @@ public class DashboardPage {
 				
 		
 				
-//*****************************Options of admin user management*************************************************
+//*****************************Options under admin user management dropdown*************************************************
 			
 		
-//*******************************functions of user management****************************************
+//*******************************functions under user management dropdown****************************************
 	public void clickRecruitUsersOption()
 	{
 		
@@ -169,9 +183,9 @@ public class DashboardPage {
 		 wait.until(ExpectedConditions.elementToBeClickable(subOrganizationUsersOption));
 		 subOrganizationUsersOption.click();
 	}
-//*******************************Functions of user management****************************************
+//*******************************Functions under user management dropdown****************************************
 	
-//*******************************Functions of provider management***********************************************
+//*******************************Functions under provider management dropdown***********************************************
 
 	public void clickProviderAndPackagesOption()
 	{
@@ -210,10 +224,10 @@ public class DashboardPage {
 	
 	
 	
-//*******************************Functions of provider management************************************************
+//*******************************Functions under provider management dropdown************************************************
 	
 	
-//*******************************Functions of commission management***********************************************
+//*******************************Functions under commission management dropdown***********************************************
 
 	public void clickUploadCommissionOption()
 	{
@@ -251,10 +265,10 @@ public class DashboardPage {
 	}
 	
 	
-//*******************************Functions of commission management***********************************************
+//*******************************Functions under commission management dropdown***********************************************
 	
 	
-//*******************************Functions of Admin config management**********************************************
+//*******************************Functions under Admin config management dropdown**********************************************
 	public void clickSettingsOption()
 	{
 		
@@ -291,10 +305,10 @@ public class DashboardPage {
 	}
 	
 	
-//*******************************Functions of Admin config management**********************************************
+//*******************************Functions under Admin config management dropdown**********************************************
 	
 	
-//*******************************Functions of Admin user management*********************************************
+//*******************************Functions under Admin user management dropdown*********************************************
 	public void clickPermissionsOption()
 	{
 		
@@ -324,9 +338,9 @@ public class DashboardPage {
 	
 	
 	
-//*******************************Functions of Admin user management*********************************************
+//*******************************Functions under Admin user management dropdown*********************************************
 	
-//****************************Single option function************************************************************	
+//****************************function ************************************************************	
 	public void clickNewsAndAnnouncementsOption(){
 		WebDriverWait wait =new WebDriverWait(driver,2);
 		wait.until(ExpectedConditions.elementToBeClickable(newsAndAnnouncementOption));
@@ -369,7 +383,7 @@ public class DashboardPage {
     	
     }
 	
-//****************************Single option function************************************************************	
+//****************************function************************************************************	
 
 	
 }
