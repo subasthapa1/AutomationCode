@@ -1,7 +1,7 @@
 package PajeObject;
 
 
-import java.util.concurrent.TimeUnit;
+
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -31,10 +31,11 @@ public class LoginCases {
   public void blankLogin(){
 	  LoginFormPage objLogin;
 	  driver.get("http://qa.codefirm.net/system/login");
-	  WebDriverWait wait = new WebDriverWait(driver, 10);
+	  driver.manage().window().maximize();
+	  WebDriverWait wait = new WebDriverWait(driver, 2);
 	 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("html/body/div/div/div/form/div/div/button")));
 	  objLogin = new LoginFormPage(driver);
-	  objLogin.loginToComlink(" "," ");
+	  objLogin.clickLogin();
 	  Assert.assertEquals("Error! Username / Password Incorrect", objLogin.getErrorMessage());
 	  driver.quit();
 	  
@@ -43,7 +44,8 @@ public class LoginCases {
   public void invalidUsername(){
 	  LoginFormPage objLogin;
 	  driver.get("http://qa.codefirm.net/system/login");
-	  WebDriverWait wait = new WebDriverWait(driver, 10);
+	  driver.manage().window().maximize();
+	  WebDriverWait wait = new WebDriverWait(driver, 2);
 		 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("html/body/div/div/div/form/div/div/button")));
 	  objLogin = new LoginFormPage(driver);
 	  objLogin.loginToComlink("admin1","123admin@");
@@ -55,7 +57,8 @@ public class LoginCases {
   public void invalidPassword(){
 	  LoginFormPage objLogin;
 	  driver.get("http://qa.codefirm.net/system/login");
-	  WebDriverWait wait = new WebDriverWait(driver, 10);
+	  driver.manage().window().maximize();
+	  WebDriverWait wait = new WebDriverWait(driver, 2);
 		 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("html/body/div/div/div/form/div/div/button")));
 	  objLogin = new LoginFormPage(driver);
 	  objLogin.loginToComlink("admin","123admin");
@@ -67,7 +70,8 @@ public class LoginCases {
   public void invalidUsernameAndPassword(){
 	  LoginFormPage objLogin;
 	  driver.get("http://qa.codefirm.net/system/login");
-	  WebDriverWait wait = new WebDriverWait(driver, 10);
+	  driver.manage().window().maximize();
+	  WebDriverWait wait = new WebDriverWait(driver, 2);
 	  wait.until(ExpectedConditions.elementToBeClickable(By.xpath("html/body/div/div/div/form/div/div/button")));
 	  objLogin = new LoginFormPage(driver);
 	  objLogin.loginToComlink("admin12","123admin@1");
@@ -79,25 +83,42 @@ public class LoginCases {
   public void validUsernameAndPassword(){
 	  LoginFormPage objLogin;
 	  driver.get("http://qa.codefirm.net/system/login");
-	  WebDriverWait wait = new WebDriverWait(driver, 10);
+	  driver.manage().window().maximize();
+	  WebDriverWait wait = new WebDriverWait(driver, 2);
 	  wait.until(ExpectedConditions.elementToBeClickable(By.xpath("html/body/div/div/div/form/div/div/button")));
 	  objLogin = new LoginFormPage(driver);
 	  objLogin.loginToComlink("admin","123admin@");
-	  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	  objLogin.doLogout();
 	  driver.quit();
   }
+  
+  @Test
+  public void checkLogout(){
+	  LoginFormPage objLogin;
+	  driver.get("http://qa.codefirm.net/system/login");
+	  driver.manage().window().maximize();
+	  WebDriverWait wait = new WebDriverWait(driver, 2);
+	  wait.until(ExpectedConditions.elementToBeClickable(By.xpath("html/body/div/div/div/form/div/div/button")));
+	  objLogin = new LoginFormPage(driver);
+	  objLogin.loginToComlink("admin","123admin@");
+	  DashboardPage dbpg = new DashboardPage(driver);
+	  dbpg.clickUserAccountDropdown();
+	  dbpg.clickLogoutButton();
+	  driver.quit();
+	  }
+  
   
   @Test(dataProvider = "Authentication")
   public void validUsernameAndPasswordUsingDataProvider(String username, String password){
 	  LoginFormPage objLogin;
 	  driver.get("http://qa.codefirm.net/system/login");
-	  WebDriverWait wait = new WebDriverWait(driver, 10);
+	  driver.manage().window().maximize();
+	  WebDriverWait wait = new WebDriverWait(driver, 2);
 	  wait.until(ExpectedConditions.elementToBeClickable(By.xpath("html/body/div/div/div/form/div/div/button")));
 	  objLogin = new LoginFormPage(driver);
 	  objLogin.loginToComlink(username,password);
-	  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	  objLogin.doLogout();
+	  DashboardPage dbpg = new DashboardPage(driver);
+	  dbpg.clickUserAccountDropdown();
+	  dbpg.clickLogoutButton();
 	  driver.quit();
   }
   

@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class RecruitUsersCases {
+public class AddRecruitUsersCases {
 	WebDriver driver;
 	@BeforeMethod
 	public void setUp(){
@@ -44,8 +44,10 @@ public class RecruitUsersCases {
 		 
 		 //Fill all the required fields 
 		 AddRecruiterFormPage rctr= new AddRecruiterFormPage(driver);
+		
 		 rctr.setAllRequiredFields( "email1@gmail.com", "firstName", "lastName", "9846474442","address1", "ktm city", "77777");
-         driver.quit();
+         rctr.clickSaveButton();
+		 driver.quit();
 		 //Filter user 
 		 // RecruitUsersListpage ls=new RecruitUsersListpage(driver);
 		// ls.filterList(1, "Amish");
@@ -55,25 +57,29 @@ public class RecruitUsersCases {
 	@Test(priority=1)
 	public void addBlankRecruiterUser(){
 		AddRecruiterFormPage rctr= new AddRecruiterFormPage(driver);
-		 rctr.setAllRequiredFields( "", "", "", "","", "", "");	
+		 rctr.clickSaveButton();
 		 driver.quit();
 	}
 	
-	@Test(priority=3)
+	@Test(priority=4)
 	public void addExistingRecruiterUser(){
 		 
-		 
-		 //Fill all the required fields 
 		 AddRecruiterFormPage rctr= new AddRecruiterFormPage(driver);
-		 rctr.setAllRequiredFields( "email1@gmail.com", "firstName", "lastName", "9846474442","address1", "ktm city", "77777");
+		 rctr.setRecruiterPersonalDetail("test@email.com", "firstName", "middleName", "lastName", "9857585585");
+		 rctr.setRecruiterAddress("address1", "address2", "city", "Alaska", "77777");
+		 rctr.setAccountDetail("tax123", "Bank of America", "123", "312122121212122");
+		 rctr.clickSaveButton();
 		 driver.quit();
 	}
-	@Test(priority=4)
-public void addUserUsingFullData()
+	@Test(priority=3)
+public void addRecruiterUsingFullData()
 {
-		AddRecruiterFormPage rctr= new AddRecruiterFormPage(driver);
-		rctr.setAllfields( "middleName", "address2", 2, "country", "taxId123", "SBI bank", "123442", "12331212121212",  "profileImage",  "status", "emailId@gmail.com",  "firstName",  "lastName",  "123121212122",  "address1", "city","23332");
-		driver.quit();
+		 AddRecruiterFormPage rctr= new AddRecruiterFormPage(driver);
+		 rctr.setRecruiterPersonalDetail("test@email.com", "firstName", "middleName", "lastName", "9857585585");
+		 rctr.setRecruiterAddress("address1", "address2", "city", "Alaska", "77777");
+		 rctr.setAccountDetail("tax123", "Bank of America", "123", "312122121212122");
+		 rctr.clickSaveButton();
+		 driver.quit();
 }
 	
 	

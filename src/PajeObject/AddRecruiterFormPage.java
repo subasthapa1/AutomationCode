@@ -1,6 +1,7 @@
 package PajeObject;
 
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -65,6 +66,9 @@ public class AddRecruiterFormPage {
 	
 	@FindBy(how=How.XPATH, using=".//*[@id='page-content']/div[3]/div/form/div[18]/div/div/button")
 	public WebElement saveButton;
+	
+	@FindBy(how=How.XPATH, using=".//*[@id='page-content']/div[3]/div/form/div[18]/div/div/a")
+	public WebElement backButton;
 	
 	
 //*********************form element declaration**********************************************************************
@@ -138,18 +142,62 @@ public void setAccountNumberField(String accountNumber){
 
 public void setProfileImageField(String profileImage){
 	profilePicField.clear();
-	profilePicField.sendKeys(profileImage);
+	profilePicField.sendKeys("Path of profileImage");
 }
 
-public void setStateField(int index){
+public void setStateField(String state){
 	Select drpdwn= new Select(stateDropdownField);
-	drpdwn.selectByIndex(index);
+	drpdwn.selectByVisibleText(state);
+	
+}
+public void clickSaveButton(){
+	saveButton.click();
+}
+public void clickBackButton(){
+	backButton.click();
+}
+
+//*********************grouping of functions on form elements**********************************************************************************************
+
+public void setRecruiterPersonalDetail(String emailId, String firstName, String middleName, String lastName,String phoneNumber ){
+	this.setEmailField(emailId);
+	this.setFirstNameField(firstName);
+	this.setMiddleNameField(middleName);
+	this.setLastNameField(lastName);
+	this.setPhoneField(phoneNumber);
+}
+
+public void setRecruiterAddress(String address1, String address2, String city, String state, String zipCode){
+	this.setAddress1Field(address1);
+	this.setAddress2Field(address2);
+	this.setCityField(city);
+	this.setStateField(state);
+	this.setZipCodeField(zipCode);
+	
 	
 }
 
-//*********************Manupulation on form elements**********************************************************************************************
+public void setAccountDetail(String taxId, String bankName, String routingNumber, String accountNumber ){
+	this.setTaxIdField(taxId);
+	this.setBankNameField(bankName);
+	this.setRoutingNumberField(routingNumber);
+	this.setAccountNumberField(accountNumber);
+}
+ 
+public void setStatus(String status){
+	if(status == "Active" || status == "active" || status == "ACTIVE"  ){
+		driver.findElement(By.xpath("//input[@value='active']")).click();
+		
+	}
+	if(status == "Pending" || status == "pending" || status == "PENDING"  ){
+		driver.findElement(By.xpath("//input[@value='pending']")).click();
+	}
+	
+	if(status == "Inactive" || status == "inactive" || status == "INACTIVE"  ){
+		
+	}driver.findElement(By.xpath("//input[@value='blocked']")).click();
+}
 
-//*********************************Functions to set all required fields***********************************************************************
 public void setAllRequiredFields(String emailId, String firstName, String lastName, String phone, String address1, String city, String zipCode){
 	this.setEmailField(emailId);
 	this.setFirstNameField(firstName);
@@ -158,9 +206,9 @@ public void setAllRequiredFields(String emailId, String firstName, String lastNa
 	this.setAddress1Field(address1);
 	this.setCityField(city);
 	this.setZipCodeField(zipCode);
-	saveButton.click();
+	
 }
-public void setAllfields(String middleName, String address2,int index,String country,String taxId,String bankName,String routingNumber,String accountNumber, String profileImage, String status,String emailId, String firstName, String lastName, String phone, String address1, String city, String zipCode)
+public void setAllfields(String middleName, String address2,String index,String country,String taxId,String bankName,String routingNumber,String accountNumber, String profileImage, String status,String emailId, String firstName, String lastName, String phone, String address1, String city, String zipCode)
 {
 	this.setEmailField(emailId);
 	this.setFirstNameField(firstName);
@@ -175,9 +223,6 @@ public void setAllfields(String middleName, String address2,int index,String cou
 	this.setTaxIdField(taxId);
 	this.setBankNameField(bankName);
 	this.setRoutingNumberField(routingNumber);
-	this.setAccountNumberField(accountNumber);
-	
-	saveButton.click();
-	
+	this.setAccountNumberField(accountNumber);	
 }
 }

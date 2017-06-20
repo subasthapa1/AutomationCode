@@ -22,3 +22,19 @@
 [0614/132056.910:ERROR:process_reader_win.cc(151)] SuspendThread: Access is denied. (0x5)
 [0614/132056.913:ERROR:exception_snapshot_win.cc(87)] thread ID 6800 not found in process
 [0614/132056.913:WARNING:crash_report_exception_handler.cc(62)] ProcessSnapshotWin::Initialize failed
+[0620/094431.338:ERROR:process_info.cc(349)] VirtualQueryEx: Access is denied. (0x5)
+[0620/094431.369:ERROR:process_info.cc(570)] ReadMemoryInfo failed
+[0620/094431.369:ERROR:process_reader_win.cc(242)] ReadMemory at 0x7ffde9a319b8 of 12 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0620/094431.397:WARNING:process_snapshot_win.cc(71)] ReadMemory ExceptionInformation failed
+[0620/094431.397:WARNING:crash_report_exception_handler.cc(62)] ProcessSnapshotWin::Initialize failed
+[0620/094431.398:ERROR:scoped_process_suspend.cc(39)] NtResumeProcess: An attempt was made to access an exiting process.  (0xc000010a)
+[0620/094457.669:ERROR:process_reader_win.cc(151)] SuspendThread: Access is denied. (0x5)
+[0620/094457.670:ERROR:exception_snapshot_win.cc(87)] thread ID 5596 not found in process
+[0620/094457.670:WARNING:crash_report_exception_handler.cc(62)] ProcessSnapshotWin::Initialize failed
+[0620/094457.671:ERROR:scoped_process_suspend.cc(39)] NtResumeProcess: An attempt was made to access an exiting process.  (0xc000010a)
+[0620/115957.140:ERROR:process_info.cc(349)] VirtualQueryEx: Access is denied. (0x5)
+[0620/115957.141:ERROR:process_info.cc(570)] ReadMemoryInfo failed
+[0620/115957.241:ERROR:process_reader_win.cc(108)] process 8552 not found
+[0620/115957.242:ERROR:exception_snapshot_win.cc(87)] thread ID 0 not found in process
+[0620/115957.242:WARNING:crash_report_exception_handler.cc(62)] ProcessSnapshotWin::Initialize failed
+[0620/115957.242:ERROR:scoped_process_suspend.cc(39)] NtResumeProcess: An attempt was made to access an exiting process.  (0xc000010a)

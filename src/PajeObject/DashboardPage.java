@@ -86,8 +86,29 @@ public class DashboardPage {
 	@FindBy(how=How.XPATH, using=".//*[@id='adminlogout']")
 	WebElement logoutButton;
 	
-//*******************************user account dropdown****************************************************************
+//*******************************end of user account dropdown****************************************************************
+
 	
+//*******************************functions under user account dropdown****************************************************************
+      public void clickUserAccountDropdown(){
+	    userAccountDropdown.click();
+       }
+      
+      public void clickChangePasswordLink(){
+    	  WebDriverWait wait= new WebDriverWait(driver,2);
+    	  wait.until(ExpectedConditions.elementToBeClickable(changePasswordLink));
+    	  changePasswordLink.click();
+      }
+      
+      public void clickLogoutButton(){
+    	  WebDriverWait wait= new WebDriverWait(driver,2);
+    	  wait.until(ExpectedConditions.elementToBeClickable(logoutButton));
+    	  logoutButton.click();
+      }
+	
+	
+//******************************* end of functions under user account dropdown****************************************************************
+
 	
 //*****************************Options under provider management dropdown************************************************	
 		@FindBy(how=How.XPATH, using="//a[@title='Provider & Packages']")

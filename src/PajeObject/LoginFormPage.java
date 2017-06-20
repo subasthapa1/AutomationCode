@@ -1,6 +1,6 @@
 package PajeObject;
 
-import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -59,14 +59,6 @@ public class LoginFormPage {
 	 return errorMessage;
  }
 
- public void doLogout(){
-	  WebElement logoutDropdownIcon = driver.findElement(By.xpath(".//*[@id='header-nav-left']/div/a/i"));
-	  WebDriverWait wait =new WebDriverWait(driver,2); 
-		wait.until(ExpectedConditions.elementToBeClickable(logoutDropdownIcon));
-		 logoutDropdownIcon.click();
-		 WebElement logoutBtn= driver.findElement(By.xpath(".//*[@id='adminlogout']"));
-		 wait.until(ExpectedConditions.elementToBeClickable(logoutBtn));
-		 logoutBtn.click();
- }
+ 
 
 }
