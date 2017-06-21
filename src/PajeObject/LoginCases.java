@@ -20,10 +20,11 @@ public class LoginCases {
 	
   @BeforeMethod
   public void setUp() {
+	  
 	  //System.setProperty("webdriver.chrome.driver", "./webdrivers/geckodriver.exe");
 	 System.setProperty("webdriver.chrome.driver", "./webdrivers/chromedriver.exe");
 
-	  driver =new ChromeDriver();
+	 driver =new ChromeDriver();
 	  //driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 	  
   }

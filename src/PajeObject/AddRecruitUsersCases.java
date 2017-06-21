@@ -10,12 +10,13 @@ import org.testng.annotations.Test;
 
 public class AddRecruitUsersCases {
 	WebDriver driver;
+	
+	
 	@BeforeMethod
 	public void setUp(){
 		System.setProperty("webdriver.chrome.driver", "./webdrivers/chromedriver.exe");
-
-		  driver =new ChromeDriver();
-		  
+		driver =new ChromeDriver();
+		
 		     LoginFormPage objLogin;
 			 DashboardPage dbPage;
 			 objLogin = new LoginFormPage(driver);
@@ -24,8 +25,8 @@ public class AddRecruitUsersCases {
 			 
 			 objLogin.loginToComlink("admin","123admin@"); //Login
 			  
-			 WebDriverWait wait = new WebDriverWait(driver, 3);
-			 wait.until(ExpectedConditions.elementToBeClickable(By.xpath(".//*[@id='agent']/span")));
+			// WebDriverWait wait = new WebDriverWait(driver, 2);
+			 //wait.until(ExpectedConditions.elementToBeClickable(By.xpath(".//*[@id='agent']/span")));
 			 
 			 //Click recruit user 
 			 dbPage= new DashboardPage(driver);
@@ -72,15 +73,15 @@ public class AddRecruitUsersCases {
 		 driver.quit();
 	}
 	@Test(priority=3)
-public void addRecruiterUsingFullData()
-{
+    public void addRecruiterUsingFullData()
+      {
 		 AddRecruiterFormPage rctr= new AddRecruiterFormPage(driver);
 		 rctr.setRecruiterPersonalDetail("test@email.com", "firstName", "middleName", "lastName", "9857585585");
 		 rctr.setRecruiterAddress("address1", "address2", "city", "Alaska", "77777");
 		 rctr.setAccountDetail("tax123", "Bank of America", "123", "312122121212122");
 		 rctr.clickSaveButton();
 		 driver.quit();
-}
+      }
 	
 	
 	

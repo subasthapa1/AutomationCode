@@ -2,40 +2,40 @@
 <testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="139729" started-at="2017-06-20T06:13:52Z" finished-at="2017-06-20T06:16:12Z">
+  <suite name="Default suite" duration-ms="134966" started-at="2017-06-21T11:15:44Z" finished-at="2017-06-21T11:17:59Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="139729" started-at="2017-06-20T06:13:52Z" finished-at="2017-06-20T06:16:12Z">
+    <test name="Default test" duration-ms="134966" started-at="2017-06-21T11:15:44Z" finished-at="2017-06-21T11:17:59Z">
       <class name="PajeObject.AddRecruitUsersCases">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:PajeObject.AddRecruitUsersCases@51565ec2]" name="setUp" is-config="true" duration-ms="28562" started-at="2017-06-20T11:58:52Z" finished-at="2017-06-20T11:59:21Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:PajeObject.AddRecruitUsersCases@51565ec2]" name="setUp" is-config="true" duration-ms="27200" started-at="2017-06-21T17:00:44Z" finished-at="2017-06-21T17:01:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="addBlankRecruiterUser()[pri:1, instance:PajeObject.AddRecruitUsersCases@51565ec2]" name="addBlankRecruiterUser" duration-ms="2962" started-at="2017-06-20T11:59:21Z" finished-at="2017-06-20T11:59:24Z">
+        <test-method status="PASS" signature="addBlankRecruiterUser()[pri:1, instance:PajeObject.AddRecruitUsersCases@51565ec2]" name="addBlankRecruiterUser" duration-ms="3262" started-at="2017-06-21T17:01:11Z" finished-at="2017-06-21T17:01:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addBlankRecruiterUser -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:PajeObject.AddRecruitUsersCases@51565ec2]" name="setUp" is-config="true" duration-ms="24994" started-at="2017-06-20T11:59:24Z" finished-at="2017-06-20T11:59:49Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:PajeObject.AddRecruitUsersCases@51565ec2]" name="setUp" is-config="true" duration-ms="23718" started-at="2017-06-21T17:01:15Z" finished-at="2017-06-21T17:01:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="addNewRecruiterUser()[pri:2, instance:PajeObject.AddRecruitUsersCases@51565ec2]" name="addNewRecruiterUser" duration-ms="9256" started-at="2017-06-20T11:59:49Z" finished-at="2017-06-20T11:59:58Z">
+        <test-method status="PASS" signature="addNewRecruiterUser()[pri:2, instance:PajeObject.AddRecruitUsersCases@51565ec2]" name="addNewRecruiterUser" duration-ms="8340" started-at="2017-06-21T17:01:38Z" finished-at="2017-06-21T17:01:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addNewRecruiterUser -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:PajeObject.AddRecruitUsersCases@51565ec2]" name="setUp" is-config="true" duration-ms="25267" started-at="2017-06-20T11:59:58Z" finished-at="2017-06-20T12:00:23Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:PajeObject.AddRecruitUsersCases@51565ec2]" name="setUp" is-config="true" duration-ms="23515" started-at="2017-06-21T17:01:47Z" finished-at="2017-06-21T17:02:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="addRecruiterUsingFullData()[pri:3, instance:PajeObject.AddRecruitUsersCases@51565ec2]" name="addRecruiterUsingFullData" duration-ms="12857" started-at="2017-06-20T12:00:23Z" finished-at="2017-06-20T12:00:36Z">
+        <test-method status="PASS" signature="addRecruiterUsingFullData()[pri:3, instance:PajeObject.AddRecruitUsersCases@51565ec2]" name="addRecruiterUsingFullData" duration-ms="13324" started-at="2017-06-21T17:02:10Z" finished-at="2017-06-21T17:02:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addRecruiterUsingFullData -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:PajeObject.AddRecruitUsersCases@51565ec2]" name="setUp" is-config="true" duration-ms="22661" started-at="2017-06-20T12:00:36Z" finished-at="2017-06-20T12:00:59Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:PajeObject.AddRecruitUsersCases@51565ec2]" name="setUp" is-config="true" duration-ms="22482" started-at="2017-06-21T17:02:24Z" finished-at="2017-06-21T17:02:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="addExistingRecruiterUser()[pri:4, instance:PajeObject.AddRecruitUsersCases@51565ec2]" name="addExistingRecruiterUser" duration-ms="13066" started-at="2017-06-20T12:00:59Z" finished-at="2017-06-20T12:01:12Z">
+        <test-method status="PASS" signature="addExistingRecruiterUser()[pri:4, instance:PajeObject.AddRecruitUsersCases@51565ec2]" name="addExistingRecruiterUser" duration-ms="13035" started-at="2017-06-21T17:02:46Z" finished-at="2017-06-21T17:02:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addExistingRecruiterUser -->
